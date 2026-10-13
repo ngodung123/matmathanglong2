@@ -1,0 +1,11 @@
+{
+  "title": "Mật Mã Thăng Long",
+  "description": "Explore Vietnamese history through a playful mobile adventure game set in Văn Miếu, engaging university students with colorful visuals and collectibles.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

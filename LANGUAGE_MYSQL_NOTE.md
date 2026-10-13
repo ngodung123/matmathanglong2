@@ -1,0 +1,1 @@
+The Language row in Profile now toggles vi/en. Switching language reloads /api/game-data?lang=en or ?lang=vi and translates the UI text layer. The MySQL schema already contains *_en columns. The current seed contains many NULL English values, so those database records will still fall back to Vietnamese until the English columns are populated.

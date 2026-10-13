@@ -1,0 +1,1170 @@
+/* ═══════════════════════════════════════════════════
+   WELCOME SCREEN
+   ═══════════════════════════════════════════════════ */
+
+.welcome-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #FBF3E4;
+}
+
+/* ─── HEADER TÍM ────────────────────────────────────── */
+.welcome-header {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+
+  background: linear-gradient(180deg, #5A1050 0%, #3A0830 100%);
+  padding-top: 80px;
+  padding-bottom: 90px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Vòng tròn đồng tâm (radial rings) */
+.welcome-header::before {
+  content: '';
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 380px;
+  height: 380px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle,
+      transparent 0%, transparent 22%,
+      rgba(245, 200, 66, 0.10) 22.2%, rgba(245, 200, 66, 0.10) 22.8%,
+      transparent 23%,
+      transparent 38%,
+      rgba(245, 200, 66, 0.10) 38.2%, rgba(245, 200, 66, 0.10) 38.8%,
+      transparent 39%,
+      transparent 54%,
+      rgba(245, 200, 66, 0.10) 54.2%, rgba(245, 200, 66, 0.10) 54.8%,
+      transparent 55%,
+      transparent 100%);
+  pointer-events: none;
+}
+
+/* Tia sáng tỏa ra */
+.welcome-header::after {
+  content: '';
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 380px;
+  height: 380px;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg, rgba(245, 200, 66, 0.06) 4deg, transparent 8deg,
+    transparent 30deg, rgba(245, 200, 66, 0.06) 34deg, transparent 38deg,
+    transparent 60deg, rgba(245, 200, 66, 0.06) 64deg, transparent 68deg,
+    transparent 90deg, rgba(245, 200, 66, 0.06) 94deg, transparent 98deg,
+    transparent 120deg, rgba(245, 200, 66, 0.06) 124deg, transparent 128deg,
+    transparent 150deg, rgba(245, 200, 66, 0.06) 154deg, transparent 158deg,
+    transparent 180deg, rgba(245, 200, 66, 0.06) 184deg, transparent 188deg,
+    transparent 210deg, rgba(245, 200, 66, 0.06) 214deg, transparent 218deg,
+    transparent 240deg, rgba(245, 200, 66, 0.06) 244deg, transparent 248deg,
+    transparent 270deg, rgba(245, 200, 66, 0.06) 274deg, transparent 278deg,
+    transparent 300deg, rgba(245, 200, 66, 0.06) 304deg, transparent 308deg,
+    transparent 330deg, rgba(245, 200, 66, 0.06) 334deg, transparent 338deg,
+    transparent 360deg
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ─── LOGO ─────────────────────────────────────────── */
+.welcome-logo-1 {
+  width: 82px;
+  height: 82px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.15px solid rgba(255, 255, 255, 0.2);
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-logo-1-1 {
+  width: 51px;
+  height: 51px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.83px solid rgba(212, 160, 23, 1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-logo-1-2 {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 0.91px solid rgba(212, 160, 23, 1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-logo-1-3 {
+  color: rgba(212, 160, 23, 1);
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Baloo 2', serif;
+  line-height: 1;
+}
+
+/* ─── TITLE ────────────────────────────────────────── */
+.welcome-title {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 14px;
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+}
+
+.welcome-title-1 { color: #F5C842; display: block; }
+.welcome-title-2 { color: #FFFFFF; display: block; }
+
+.welcome-subtitle {
+  position: relative;
+  z-index: 1;
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 8px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* ─── VĂN ĐỒNG AVATAR (nổi lên giữa header và body) ── */
+.welcome-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: -60px;
+  position: relative;
+  z-index: 2;
+}
+
+.welcome-avatar-card {
+  width: 120px;
+  height: 120px;
+
+  background: #FFFBF0;
+  border-radius: 28px;
+  border: none;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 10px 28px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ─── BODY ─────────────────────────────────────────── */
+.welcome-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 24px 24px;
+}
+
+.welcome-greeting {
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  color: #8B0000;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.welcome-desc {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 13px;
+  color: #7A5C4A;
+  text-align: center;
+  line-height: 1.65;
+  max-width: 320px;
+  margin: 0;
+}
+
+/* ─── BUTTONS ──────────────────────────────────────── */
+.welcome-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.btn-primary {
+  width: 100%;
+  height: 54px;
+
+  background: linear-gradient(180deg, #B71C1C 0%, #8B0000 100%);
+  color: white;
+
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 0 #6B0000,
+    0 8px 20px rgba(139, 0, 0, 0.3);
+
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-primary:active {
+  transform: translateY(3px);
+  box-shadow:
+    0 1px 0 #6B0000,
+    0 3px 10px rgba(139, 0, 0, 0.25);
+}
+
+.btn-secondary {
+  width: 100%;
+  height: 54px;
+
+  background: #FFFBF0;
+  color: #2D1B14;
+
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+
+  border: 1.5px solid #E5D5B8;
+  border-radius: 16px;
+  cursor: pointer;
+
+  box-shadow: 0 2px 0 #E5D5B8;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-secondary:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 0 #E5D5B8;
+}
+
+/* ─── FOOTER ───────────────────────────────────────── */
+.welcome-footer {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 10.5px;
+  color: #7A5C4A;
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 16px;
+  padding: 0 4px;
+}
+
+.welcome-version {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 9.5px;
+  color: #C9B69B;
+  text-align: center;
+  margin-top: 8px;
+  letter-spacing: 0.04em;
+}
+
+/* ─── STATUS BAR (nếu chưa có) ─────────────────────── */
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.status-bar-time {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+}
+
+.status-bar-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ═══════════════════════════════════════════════════
+   LOGIN SCREEN
+   ═══════════════════════════════════════════════════ */
+
+.login-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #FBF3E4;
+}
+
+/* ─── HEADER TÍM ────────────────────────────────────── */
+.login-header {
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #5A1050 0%, #4A1040 100%);
+  padding-bottom: 14px;
+}
+
+.login-header-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px 12px;
+}
+
+.login-back-btn {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.login-back-btn:active {
+  transform: scale(0.92);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.login-header-title {
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+/* ─── BODY ─────────────────────────────────────────── */
+.login-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 20px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── WELCOME CARD (Văn Đồng) ──────────────────────── */
+.login-welcome-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  background: #FFFBF0;
+  border: 1.5px solid #E5D5B8;
+  border-radius: 20px;
+
+  padding: 14px 16px;
+  margin-bottom: 22px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.login-welcome-avatar {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-welcome-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.login-welcome-title {
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: #2D1B14;
+  line-height: 1.15;
+  margin: 0 0 3px;
+}
+
+.login-welcome-sub {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 11.5px;
+  color: #7A5C4A;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ─── FORM ─────────────────────────────────────────── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.login-label {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #2D1B14;
+  letter-spacing: 0.01em;
+}
+
+.login-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  height: 52px;
+  padding: 0 16px;
+
+  background: #FFFBF0;
+  border: 1.5px solid #E5D5B8;
+  border-radius: 14px;
+
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.login-input-wrap:focus-within {
+  border-color: #C1272D;
+  box-shadow: 0 0 0 3px rgba(193, 39, 45, 0.1);
+}
+
+.login-input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  outline: none;
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 14px;
+  color: #2D1B14;
+}
+
+.login-input::placeholder {
+  color: #C9B69B;
+}
+
+.login-input-toggle {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── FORGOT LINK ──────────────────────────────────── */
+.login-forgot-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -6px;
+}
+
+.login-forgot-btn {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #C1272D;
+  padding: 4px 0;
+}
+
+.login-forgot-btn:active {
+  opacity: 0.7;
+}
+
+/* ─── SUBMIT BUTTON ────────────────────────────────── */
+.login-submit {
+  width: 100%;
+  height: 54px;
+  margin-top: 8px;
+
+  background: linear-gradient(180deg, #B71C1C 0%, #8B0000 100%);
+  color: white;
+
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 0 #6B0000,
+    0 8px 20px rgba(139, 0, 0, 0.28);
+
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.login-submit:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow:
+    0 1px 0 #6B0000,
+    0 3px 10px rgba(139, 0, 0, 0.25);
+}
+
+.login-submit:disabled {
+  background: #EEE0C4;
+  color: #7A5C4A;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* ─── DIVIDER ──────────────────────────────────────── */
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.login-divider-line {
+  flex: 1;
+  height: 1px;
+  background: #E5D5B8;
+}
+
+.login-divider-text {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 11.5px;
+  color: #7A5C4A;
+  font-weight: 600;
+}
+
+/* ─── GOOGLE BUTTON ────────────────────────────────── */
+.login-google {
+  width: 100%;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background: #FFFBF0;
+  color: #2D1B14;
+
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  border: 1.5px solid #E5D5B8;
+  border-radius: 14px;
+  cursor: pointer;
+
+  transition: transform 0.1s ease, background 0.15s ease;
+}
+
+.login-google:active:not(:disabled) {
+  transform: translateY(2px);
+  background: #FDF6E8;
+}
+
+.login-google:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ─── REGISTER LINK ────────────────────────────────── */
+.login-register-row {
+  text-align: center;
+  margin-top: 24px;
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 13px;
+  color: #7A5C4A;
+}
+
+.login-register-btn {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #C1272D;
+  padding: 0;
+}
+
+.login-register-btn:active {
+  opacity: 0.7;
+}
+
+/* ─── ERROR ────────────────────────────────────────── */
+.login-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  background: #FFF0F0;
+  border: 1.5px solid #C1272D;
+  border-radius: 14px;
+
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+.login-error-text {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 12.5px;
+  color: #C1272D;
+  line-height: 1.5;
+  flex: 1;
+  margin: 0;
+}
+.login-back-btn svg {
+  display: block;
+}
+
+.login-input-toggle svg {
+  display: block;
+}
+
+.login-google svg {
+  flex-shrink: 0;
+}
+
+.login-header-title,
+.login-submit,
+.login-google,
+.login-welcome-title,
+.login-register-btn,
+.login-forgot-btn {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.welcome-avatar-card img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  display: block;
+}
+/* ═══════════════════════════════════════════════════
+   REGISTER SCREEN — bổ sung
+   ═══════════════════════════════════════════════════ */
+
+/* Header có 2 dòng (title + subtitle) */
+.login-header-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.login-header-sub {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Checkbox điều khoản */
+.register-terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+.register-checkbox {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  background: transparent;
+  border: 2px solid #C1272D;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+.register-checkbox.checked {
+  background: #C1272D;
+  border-color: #C1272D;
+}
+
+.register-terms-text {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 12.5px;
+  color: #2D1B14;
+  line-height: 1.5;
+  padding-top: 1px;
+}
+
+.register-terms-link {
+  color: #C1272D;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.register-terms-link:hover {
+  text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════════════════
+   FORGOT PASSWORD + SUCCESS
+   ═══════════════════════════════════════════════════ */
+
+.forgot-body {
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+/* ─── Văn Đồng avatar cho Forgot ─── */
+.forgot-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.forgot-avatar-card {
+  width: 130px;
+  height: 130px;
+  background: linear-gradient(145deg, #FFF2C8 0%, #FFE8A0 100%);
+  border: 2.5px solid #D4A017;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 6px rgba(212, 160, 23, 0.1),
+    0 8px 24px rgba(212, 160, 23, 0.25);
+}
+
+.forgot-avatar-card img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ─── Titles ─── */
+.forgot-title {
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #2D1B14;
+  text-align: center;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.forgot-desc {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 13px;
+  color: #7A5C4A;
+  text-align: center;
+  line-height: 1.65;
+  max-width: 320px;
+  margin: 0;
+}
+
+/* ─── Note box (vàng nhạt) ─── */
+.forgot-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(245, 200, 66, 0.15);
+  border: 1.5px solid rgba(212, 160, 23, 0.4);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-top: 4px;
+}
+
+.forgot-note-text {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 11.5px;
+  color: #7A5010;
+  line-height: 1.5;
+  flex: 1;
+  margin: 0;
+}
+
+/* Đẩy footer xuống đáy */
+.forgot-spacer {
+  flex: 1;
+  min-height: 20px;
+}
+
+/* ═══════════════════════════════════════════════════
+   SUCCESS SCREEN
+   ═══════════════════════════════════════════════════ */
+
+.success-check {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #EFF8F3;
+  border: 2.5px solid #3D8A5E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 20px;
+  box-shadow: 0 0 0 6px rgba(61, 138, 94, 0.08);
+}
+
+.success-title {
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #2D1B14;
+  text-align: center;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.success-desc {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 13px;
+  color: #7A5C4A;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 320px;
+  margin: 0 0 4px;
+}
+
+.success-email {
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: #2D1B14;
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+/* ─── Steps list ─── */
+.success-steps {
+  width: 100%;
+  background: #FFFBF0;
+  border: 1.5px solid #E5D5B8;
+  border-radius: 20px;
+  padding: 6px 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.success-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid #E5D5B8;
+}
+
+.success-step:last-child {
+  border-bottom: none;
+}
+
+.success-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #4A1040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: white;
+}
+
+.success-step-text {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 13px;
+  color: #2D1B14;
+  line-height: 1.4;
+  margin: 0;
+  flex: 1;
+}
+/* ═══════════════════════════════════════════════════
+   FORGOT PASSWORD + SUCCESS + REGISTER FIXES
+   ═══════════════════════════════════════════════════ */
+
+.forgot-body {
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.forgot-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.forgot-avatar-card {
+  width: 130px;
+  height: 130px;
+  background: linear-gradient(145deg, #FFF2C8 0%, #FFE8A0 100%);
+  border: 2.5px solid #D4A017;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 0 0 6px rgba(212, 160, 23, 0.1), 0 8px 24px rgba(212, 160, 23, 0.25);
+}
+
+.forgot-avatar-card img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  display: block;
+}
+
+.forgot-title {
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #2D1B14;
+  text-align: center;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.forgot-desc {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 13px;
+  color: #7A5C4A;
+  text-align: center;
+  line-height: 1.65;
+  max-width: 320px;
+  margin: 0;
+}
+
+.forgot-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(245, 200, 66, 0.15);
+  border: 1.5px solid rgba(212, 160, 23, 0.4);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-top: 4px;
+}
+
+.forgot-note-text {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 11.5px;
+  color: #7A5010;
+  line-height: 1.5;
+  flex: 1;
+  margin: 0;
+}
+
+.forgot-spacer { flex: 1; min-height: 20px; }
+
+.login-header-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.login-header-sub {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.register-terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+.register-checkbox {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  background: transparent;
+  border: 2px solid #C1272D;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+.register-checkbox.checked {
+  background: #C1272D;
+  border-color: #C1272D;
+}
+
+.register-terms-text {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 12.5px;
+  color: #2D1B14;
+  line-height: 1.5;
+  padding-top: 1px;
+}
+
+.register-terms-link {
+  color: #C1272D;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.register-terms-link:hover { text-decoration: underline; }
+
+.success-check {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #EFF8F3;
+  border: 2.5px solid #3D8A5E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 20px;
+  box-shadow: 0 0 0 6px rgba(61, 138, 94, 0.08);
+}
+
+.success-title {
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #2D1B14;
+  text-align: center;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.success-desc {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 13px;
+  color: #7A5C4A;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 320px;
+  margin: 0 0 4px;
+}
+
+.success-email {
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: #2D1B14;
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.success-steps {
+  width: 100%;
+  background: #FFFBF0;
+  border: 1.5px solid #E5D5B8;
+  border-radius: 20px;
+  padding: 6px 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.success-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid #E5D5B8;
+}
+
+.success-step:last-child { border-bottom: none; }
+
+.success-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #4A1040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: white;
+}
+
+.success-step-text {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 13px;
+  color: #2D1B14;
+  line-height: 1.4;
+  margin: 0;
+  flex: 1;
+}
+.phone-frame {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 0;
+  background: #E8DCC8;
+}
+
+.phone-frame > * {
+  width: 430px;
+  height: 932px;
+  background: #FBF3E4;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.06);
+}

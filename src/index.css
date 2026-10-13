@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-plum: var(--plum);
+  --color-gold: var(--gold);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
+  --font-display: var(--font-baloo);
+  --font-sans: var(--font-be-vietnam);
+}
+
+:root {
+  --background: #FDF6E8;
+  --foreground: #2D1B14;
+  --card: #FFFBF0;
+  --card-foreground: #2D1B14;
+  --primary: #C1272D;
+  --primary-foreground: #FFF9F0;
+  --secondary: #F5C842;
+  --secondary-foreground: #2D1B14;
+  --muted: #EEE0C4;
+  --muted-foreground: #7A5C4A;
+  --accent: #3D8A5E;
+  --accent-foreground: #FFF9F0;
+  --border: #DDD0B4;
+  --ring: #C1272D;
+  --plum: #4A1040;
+  --gold: #D4A017;
+  --radius: 1rem;
+  --font-baloo: 'Baloo 2', system-ui, sans-serif;
+  --font-be-vietnam: 'Be Vietnam Pro', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-be-vietnam);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
+/* ─── HEADER ─────────────────────────────────────────── */
+.Header {
+  width: 100%;
+  height: 300px;
+
+  /* Ảnh nền + lớp gradient tím đè lên (giống Figma) */
+  background-image:
+    linear-gradient(180deg,
+      rgba(74, 16, 64, 0.95) 0%,
+      rgba(58, 8, 48, 0.98) 100%),
+    url('/17997421.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Căn giữa nội dung */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding-top: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Vòng tròn đồng tâm (radial rings) */
+.Header::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  background:
+    radial-gradient(circle, transparent 30%, rgba(245, 200, 66, 0.06) 30.5%, transparent 31%),
+    radial-gradient(circle, transparent 45%, rgba(245, 200, 66, 0.06) 45.5%, transparent 46%),
+    radial-gradient(circle, transparent 60%, rgba(245, 200, 66, 0.06) 60.5%, transparent 61%);
+  pointer-events: none;
+}
+
+/* ─── LOGO ───────────────────────────────────────────── */
+.logo-1 {
+  width: 82.26px;
+  height: 82.26px;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.15px solid rgba(255, 255, 255, 0.2);
+  border-radius: 21.94px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 1;
+  margin-bottom: 12px;
+}
+
+.logo-1-1 {
+  width: 51.18px;
+  height: 51.18px;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.83px solid rgba(212, 160, 23, 1);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-1-12 {
+  width: 40.21px;
+  height: 40.21px;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 0.91px solid rgba(212, 160, 23, 1);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-1-13 {
+  width: 21px;
+  height: 21px;
+
+  color: rgba(212, 160, 23, 1);
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Baloo 2', serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── TEXT ───────────────────────────────────────────── */
+.header-title {
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.header-title .title-line-1 {
+  color: #F5C842;   /* vàng */
+  display: block;
+}
+
+.header-title .title-line-2 {
+  color: #FFFFFF;
+  display: block;
+}
+
+.header-subtitle {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 8px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
