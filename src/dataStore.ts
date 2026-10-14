@@ -106,8 +106,11 @@ const achievementChecks: Record<string, Achievement['check']> = {
   perfect: (_cps, count) => count >= 35,
 }
 
-const API_HOST = typeof window === 'undefined' ? 'localhost' : window.location.hostname
-const API_URL = import.meta.env.VITE_GAME_API_URL || `http://${API_HOST}:3002`
+const API_URL = (
+  import.meta.env.VITE_GAME_API_URL ||
+  import.meta.env.VITE_API_URL ||
+  ''
+).replace(/\/$/, '')
 
 export async function loadAppData(language: 'vi' | 'en' = 'vi') {
   const response = await fetch(`${API_URL}/api/game-data?lang=${language}`)
