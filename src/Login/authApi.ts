@@ -30,8 +30,7 @@ export interface RegisterPayload {
   displayName?: string
 }
 
-const API_HOST = typeof window === 'undefined' ? 'localhost' : window.location.hostname
-const API_BASE = (import.meta.env.VITE_API_URL || `http://${API_HOST}:3002`).replace(/\/$/, '')
+const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '')
 const ACCESS_TOKEN_KEY = 'mat_ma_thang_long_access_token'
 const REFRESH_TOKEN_KEY = 'mat_ma_thang_long_refresh_token'
 
