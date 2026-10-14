@@ -134,4 +134,11 @@ app.get('/api/game-data', async (req, res) => {
   }
 })
 
+if (process.env.VERCEL !== '1') {
+  const PORT = Number(process.env.PORT || 3002)
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Mật Mã Thăng Long API running at http://0.0.0.0:${PORT}`)
+  })
+}
+
 export default app
