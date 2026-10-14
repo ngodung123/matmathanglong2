@@ -126,7 +126,4 @@ app.get('/api/game-data', async (req, res) => {
   }
 })
 
-const GAME_DATA_PORT = Number(process.env.GAME_DATA_PORT || 3002)
-app.listen(GAME_DATA_PORT, () => {
-  console.log(`Mật Mã Thăng Long game-data API running at http://localhost:${GAME_DATA_PORT}`)
-})
+export default app
